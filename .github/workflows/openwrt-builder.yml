@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  REPO_URL: https://github.com/chasey-dev/immortalwrt-mt798x-rebase
+  REPO_URL: https://github.com/izeroo/immortalwrt-mt798x-rebase
   REPO_BRANCH: 25.12-dev-wifi7
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
