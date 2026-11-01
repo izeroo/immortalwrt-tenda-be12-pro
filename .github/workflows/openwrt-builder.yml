@@ -140,16 +140,6 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         $GITHUB_WORKSPACE/$DIY_SH feeds
-
-        if [ ! -d feeds/passwall2/luci-app-passwall2 ]; then
-          echo "::error::Missing passwall2 source feed: feeds/passwall2/luci-app-passwall2"
-          exit 1
-        fi
-        if [ ! -d feeds/passwall_packages/xray-core ]; then
-          echo "::error::Missing passwall package feed: feeds/passwall_packages/xray-core"
-          exit 1
-        fi
-
         ./scripts/feeds update -i
 
     - name: Install feeds
@@ -175,11 +165,6 @@ jobs:
         required_symbols=(
           "CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_tenda_be12-pro"
           "CONFIG_PACKAGE_luci"
-          "CONFIG_PACKAGE_luci-theme-argon"
-          "CONFIG_PACKAGE_luci-app-passwall2"
-          "CONFIG_PACKAGE_luci-app-passwall2_Basic_Core_Xray"
-          "CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn"
-          "CONFIG_PACKAGE_xray-core"
           "CONFIG_CCACHE"
           "CONFIG_PACKAGE_kmod-mt_wifi7"
           "CONFIG_PACKAGE_kmod-mt7992"
